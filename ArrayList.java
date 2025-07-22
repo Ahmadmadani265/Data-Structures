@@ -98,7 +98,7 @@ class MyArrayList<T> {
         for (int i = index; i < size; i++) {
             arr[i] = arr[i + 1];
         }
-        //arr[size] = null;
+        arr[size] = null;
         size--;
         return true;
     }
