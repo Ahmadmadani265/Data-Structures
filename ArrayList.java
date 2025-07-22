@@ -66,7 +66,7 @@ class MyArrayList<T> {
 
     int lastindexof(T val) {
         for (int i = size - 1; i >= 0; i--) {
-            if (arr[i] == val) {
+            if (arr[i].equals(val)) {
                 return i;
             }
         }
@@ -98,7 +98,7 @@ class MyArrayList<T> {
         for (int i = index; i < size; i++) {
             arr[i] = arr[i + 1];
         }
-        arr[size] = null;
+         arr[size] = null;
         size--;
         return true;
     }
@@ -109,7 +109,7 @@ class MyArrayList<T> {
 
     boolean equal(MyArrayList a) {
         for (int i = 0; i < a.size(); i++) {
-            if (!(a.get(i) == arr[i])) {
+            if (!a.get(i).equals(arr[i])) {
                 return false;
             }
         }
@@ -118,7 +118,7 @@ class MyArrayList<T> {
 
     boolean contains(T val) {
         for (int i = 0; i < size; i++) {
-            if (arr[i] == val) {
+            if (arr[i].equals(val)) {
                 return true;
             }
         }
@@ -127,7 +127,7 @@ class MyArrayList<T> {
 
     int indexof(T val) {
         for (int i = 0; i < size; i++) {
-            if (arr[i] == val) {
+            if (arr[i].equals(val)) {
                 return i;
             }
         }
