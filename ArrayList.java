@@ -1,33 +1,34 @@
 package arraylist;
+
 class MyArrayList<T> {
     T arr[];
     int size = 0;
+
     public MyArrayList() {
-        arr = (T[])new Object[3];
+        arr = (T[]) new Object[3];
     }
 
-    void ensureCapacity() {//check capacity and increase array size
+    void ensureCapacity() {
         if (arr.length == size) {
-            Object[] temp= (T[]) new Object[arr.length * 2];
+            Object[] temp = (T[]) new Object[arr.length * 2];
             for (int i = 0; i < size; i++) {
                 temp[i] = arr[i];
             }
-            arr = (T[])temp;
+            arr = (T[]) temp;
         }
     }
 
     void add(T val) {
         ensureCapacity();
-        arr[size] = val;
-        size++;
+        arr[size++] = val;
     }
 
     void addbyindex(int index, T val) {
         if (index < 0 || index > size) {
-            throw new ArrayIndexOutOfBoundsException("Invalid index =" + index);
+            throw new ArrayIndexOutOfBoundsException("Invalid index = " + index);
         }
         ensureCapacity();
-        for (int i = size; i >= index; i--) {
+        for (int i = size; i > index; i--) {
             arr[i] = arr[i - 1];
         }
         arr[index] = val;
@@ -56,10 +57,10 @@ class MyArrayList<T> {
     }
 
     T set(int index, T val) {
-        T oldval = arr[index];
         if (index < 0 || index >= size) {
-            throw new ArrayIndexOutOfBoundsException("Invalid index11 =" + index);
+            throw new ArrayIndexOutOfBoundsException("Invalid index = " + index);
         }
+        T oldval = arr[index];
         arr[index] = val;
         return oldval;
     }
@@ -74,16 +75,16 @@ class MyArrayList<T> {
     }
 
     void shiftLeft(int index) {
-        for (int i = index; i < size; i++) {
+        for (int i = index; i < size - 1; i++) {
             arr[i] = arr[i + 1];
         }
-        arr[size]=null;
+        arr[size - 1] = null;
         size--;
     }
 
     T removebyindex(int index) {
         if (index < 0 || index >= size) {
-            throw new ArrayIndexOutOfBoundsException("Invalid index =" + index);
+            throw new ArrayIndexOutOfBoundsException("Invalid index = " + index);
         }
         T oldval = arr[index];
         shiftLeft(index);
@@ -91,25 +92,34 @@ class MyArrayList<T> {
     }
 
     boolean remove(T value) {
-        if (!contains(value)) {
-            return false;
-        }
         int index = indexof(value);
-        for (int i = index; i < size; i++) {
-            arr[i] = arr[i + 1];
-        }
-         arr[size] = null;
-        size--;
+        if (index == -1) return false;
+        shiftLeft(index);
         return true;
     }
 
+    boolean removeAll(MyArrayList<T> other) {
+        boolean removed = false;
+        for (int i = size - 1; i >= 0; i--) {
+            if (other.contains(arr[i])) {
+                removebyindex(i);
+                removed = true;
+            }
+        }
+        return removed;
+    }
+
     void clear() {
+        for (int i = 0; i < size; i++) {
+            arr[i] = null;
+        }
         size = 0;
     }
 
-    boolean equal(MyArrayList a) {
-        for (int i = 0; i < a.size(); i++) {
-            if (!a.get(i).equals(arr[i])) {
+    boolean equal(MyArrayList<T> a) {
+        if (this.size != a.size()) return false;
+        for (int i = 0; i < size; i++) {
+            if (!arr[i].equals(a.get(i))) {
                 return false;
             }
         }
@@ -117,12 +127,7 @@ class MyArrayList<T> {
     }
 
     boolean contains(T val) {
-        for (int i = 0; i < size; i++) {
-            if (arr[i].equals(val)) {
-                return true;
-            }
-        }
-        return false;
+        return indexof(val) != -1;
     }
 
     int indexof(T val) {
@@ -135,11 +140,7 @@ class MyArrayList<T> {
     }
 
     int size() {
-        int c = 0;
-        for (int i = 0;i<size; i++) {
-          c++;
-        }
-        return c;
+        return size;
     }
 
     @Override
@@ -154,5 +155,4 @@ class MyArrayList<T> {
         s += "]";
         return s;
     }
-
 }
