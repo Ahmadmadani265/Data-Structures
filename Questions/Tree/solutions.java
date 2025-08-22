@@ -1,4 +1,4 @@
-package Tree;
+package Questions.Tree;
 
 public class solutions {
     

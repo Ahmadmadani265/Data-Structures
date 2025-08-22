@@ -1,4 +1,4 @@
-package MapSet;
+package Questions.MapSet;
 
 import java.util.HashMap;
 import java.util.Map;

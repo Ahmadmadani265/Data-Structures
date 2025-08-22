@@ -1,4 +1,4 @@
-package Stack;
+package Questions.Queue;
 
 public class Solutions {
     
