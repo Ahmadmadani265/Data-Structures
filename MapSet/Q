@@ -1,0 +1,16 @@
+Q1) Write a Java program that reads a sentence from the user, splits it into words, and then counts the frequency 
+of each word using a HashMap. Display the word frequency.
+
+Q2) Write a Java program that removes all duplicate characters from a string, retaining the order of 
+the first occurrence of each character.
+Use a HashMap for this task.
+
+Q3) Write a Java program that merges two HashMaps. If a key exists in both maps, 
+sum the values from both maps.
+
+Q4) Write a Java program that uses a HashMap to find the length of 
+the longest substring without repeating characters 
+in a given string.
+
+Q5) Write a Java program that groups characters in a string by their frequency (characters with the same 
+frequency should be grouped together).

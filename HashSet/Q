@@ -1,0 +1,32 @@
+
+Q1) Given an array of integers from 1 to N (some numbers may be missing),use a HashSet to find all missing numbers.
+Example:
+Input: [1, 2, 4, 6], N = 6
+Output: [3, 5]
+
+
+Q2) Given an array and a target sum, find all unique pairs of numbers that add up to the target. 
+Use a HashSet to improve efficiency.
+Example:
+Input: [1, 2, 3, 4, 3], target = 6
+Output: [(2, 4), (3, 3)]
+
+Q3) Given two arrays of integers,count how many distinct elements are common between them using HashSet.
+Example:
+Input: [1, 2, 3, 4], [3, 4, 5, 6]
+Output: 2
+
+
+Q4) Given two strings, find the characters that are uncommon between them 
+using a HashSet.
+Example:
+Input: "abcd", "afgh"
+Output: [b, c, d, f, g, h]
+
+
+Q5) Given a string, remove adjacent duplicates using a HashSet 
+to keep track of previously seen characters.
+Example:
+Input: "aabccbaa"
+Output: "abcba"
+
