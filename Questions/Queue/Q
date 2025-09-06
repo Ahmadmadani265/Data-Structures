@@ -1,0 +1,11 @@
+Q1) Reverse a queue using a stack.
+Q2) Given an integer N, generate binary numbers from 1 to N using a queue.
+Q3) Given a queue, reverse the first K elements, leaving the rest in the same order.
+Q4)  Smallest multiple of a given number made of digits 0 and 9 only.
+Q5) Maximum of all subarrays of size k  
+ Given an array arr[] of size N and an integer K. Find the maximum for each and every contiguous 
+subarray of size K.  
+Example 1:  
+Input: N = 9, K = 3  
+arr[] = 1 2 3 1 4 5 2 3 6  
+Output: 3 3 4 5 5 5 6  
