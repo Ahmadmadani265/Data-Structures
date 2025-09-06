@@ -1,4 +1,5 @@
 package stack;
+
 import java.util.EmptyStackException;
 public class MyStack<T> {
     private T arr[];
