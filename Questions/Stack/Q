@@ -2,4 +2,5 @@ Q1) Write a function that checks if parentheses/brackets/braces are balanced in 
 Q2) Reverse a string using stack.
 Q3) For each element in the array, print the nearest smaller number on its left.
 Q4) Build a stack (LIFO) but internally use two queues.
+Q5) Sort a stack in ascending order using another stack.
 
